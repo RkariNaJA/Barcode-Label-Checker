@@ -1,4 +1,4 @@
-# Barcode Label Checker — PDF vs Excel (updated 2026-07-22)
+# Barcode Label Checker — PDF vs Excel — Hi-Tech Apparel
 
 Verifies vendor barcode label proofs (PDF) against the official EAN list (Excel)
 before production, replacing the manual line-by-line check. Runs entirely in the
