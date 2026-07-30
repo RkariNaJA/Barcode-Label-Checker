@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------
+# COMPANY DATA — never commit real customer/order files.
+# These folders hold real BABOLAT / UCC label PDFs and EAN spreadsheets
+# and stay LOCAL only.
+# ---------------------------------------------------------------------------
+Data BABOLAT/
+Data UCC/
+Data Error/
+
+# Safety net: block any spreadsheet / PDF / CSV anywhere in the repo,
+# so a stray data file can never be committed by accident.
+*.xlsx
+*.xls
+*.xlsm
+*.pdf
+*.csv
+
+# ---------------------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------------------
+node_modules/
+
+# ---------------------------------------------------------------------------
+# Build output (regenerate with `npm run build` / `npm run build:single`)
+# ---------------------------------------------------------------------------
+dist/
+dist-single/
+
+# ---------------------------------------------------------------------------
+# Local tool / editor settings (any .claude dir, root or nested)
+# ---------------------------------------------------------------------------
+.claude/settings.local.json
+**/settings.local.json
+
+# ---------------------------------------------------------------------------
+# OS / misc junk
+# ---------------------------------------------------------------------------
+Thumbs.db
+.DS_Store
+*.log

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barcode Label Checker — PDF vs Excel</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand">
+      <div class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <h1>Barcode Label Checker
+        <small>Compare vendor label PDF against EAN Excel — ตรวจสอบป้ายบาร์โค้ดกับไฟล์ Excel</small>
+      </h1>
+    </div>
+    <div class="headBtns">
+      <button id="custBtn" type="button" hidden>Customer</button>
+      <button id="themeBtn" type="button">Dark / Light</button>
+    </div>
+  </header>
+
+  <section id="custScreen">
+    <h2>Select customer — เลือก Mode ก่อนเริ่มตรวจสอบ</h2>
+    <div class="custGrid">
+      <button class="custCard" type="button" data-cust="babolat">
+        <span class="custName">BABOLAT</span>
+        <span class="custDesc">Hang-tag barcode labels (NW…WE… proof sheets)<br>Match by <b>SKU</b> — EAN, designation, color, size, PO…</span>
+      </button>
+      <button class="custCard" type="button" data-cust="ucc">
+        <span class="custName">UCC</span>
+        <span class="custDesc">Carton / shipping labels (one label per page, 128C barcode)<br>Match by <b>Parcel number</b> — SKU, EAN, Qty/Box, ETD…</span>
+      </button>
+    </div>
+  </section>
+
+  <section id="tool" hidden>
+  <div id="drop" role="button" tabindex="0" aria-label="Drop files or click to browse">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <path d="M14 2v6h6"/>
+      <path d="M12 18v-6"/>
+      <path d="m9 15 3 3 3-3"/>
+    </svg>
+    <p class="big">Drop the label PDF(s) and the EAN Excel file(s) here</p>
+    <p class="hint">or click to browse — ลากไฟล์ PDF และ Excel มาวางที่นี่ (ได้หลายไฟล์ทั้ง PDF และ Excel)</p>
+    <input id="fileInput" type="file" multiple accept=".pdf,.xlsx,.xls,.csv">
+  </div>
+
+  <div id="files"></div>
+  <div id="msg"></div>
+
+  <section id="results" hidden>
+    <div id="summary"></div>
+    <div id="toolbar">
+      <input id="fSku" type="search" placeholder="Filter SKU…" aria-label="Filter by SKU">
+      <select id="fOrli" aria-label="Filter by Orli code"><option value="">Orli: all</option></select>
+      <select id="fSize" aria-label="Filter by size"><option value="">Size: all</option></select>
+      <select id="fPo" aria-label="Filter by PO number"><option value="">PO: all</option></select>
+      <label class="toggle"><input type="checkbox" id="onlyProblems"> Show only problems</label>
+      <label class="toggle"><input type="checkbox" id="onlyMatches"> Show only matches</label>
+      <span class="grow"></span>
+      <button class="action primary" id="dlXlsx" type="button">Download .xlsx</button>
+      <button class="action" id="dlCsv" type="button">Download .csv</button>
+    </div>
+    <div id="tableWrap"></div>
+    <p id="hiddenNote"></p>
+  </section>
+  </section>
+
+  <footer>
+    <span>Runs entirely in your browser — no files are uploaded anywhere.</span>
+    <span>Barcode Label Checker v1.2</span>
+  </footer>
+</main>
+
+<script src="js/lib/xlsx.full.min.js"></script>
+<script src="js/lib/pdf.min.js"></script>
+<script src="js/lib/pdf.worker.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
