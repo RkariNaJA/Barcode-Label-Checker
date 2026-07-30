@@ -1,0 +1,9 @@
+# Exclude generated / vendored files from GitHub's language statistics.
+# These files stay in the repo — they just don't count toward the language bar,
+# so the stats reflect the hand-written React source, not the bundled libraries.
+
+# Single-file HTML builds (minified pdf.js + SheetJS inlined) — generated output.
+compare.html linguist-generated
+
+# Vendored third-party libraries (pdf.js, SheetJS).
+*.min.js linguist-vendored
